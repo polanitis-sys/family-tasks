@@ -1,0 +1,16 @@
+{
+  "name": "family-tasks-hosted",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Botanical family task planner with a private server-to-server Google Sheets connection.",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check:connection": "node --env-file-if-exists=.env tools/check-connection.mjs",
+    "check": "node --check server.mjs && node --check lib/bridge.mjs && node --check public/app.js"
+  }
+}

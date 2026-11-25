@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: family-tasks
+    runtime: node
+    buildCommand: npm run check
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 24
+      - key: APPS_SCRIPT_URL
+        sync: false
+      - key: HOSTING_SECRET
+        sync: false
